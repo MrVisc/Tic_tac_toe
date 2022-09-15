@@ -52,35 +52,31 @@ def display(img, imgx, imgo, player, choice):
     copy(width, height, img, imgnew)
 
 def check_for_winner(player, choice):
-    result = -1
     if (positions[1] == positions[2] and positions[2] == positions[3]):
         if not positions[1] == -1:
-            result = 0
-    elif (positions[4] == positions[5] and positions[5] == positions[6]):
+            return 0
+    if (positions[4] == positions[5] and positions[5] == positions[6]):
         if not positions[4] == -1:
-            result = 0
-    elif (positions[7] == positions[8] and positions[8] == positions[9]):
+            return 0
+    if (positions[7] == positions[8] and positions[8] == positions[9]):
         if not positions[7] == -1:
-            result = 0
-    elif (positions[1] == positions[4] and positions[4] == positions[7]):
+            return 0
+    if (positions[1] == positions[4] and positions[4] == positions[7]):
         if not positions[1] == -1:
-            result = 0
-    elif (positions[2] == positions[5] and positions[5] == positions[8]):
+            return 0
+    if (positions[2] == positions[5] and positions[5] == positions[8]):
         if not positions[2] == -1:
-            result = 0
-    elif (positions[3] == positions[6] and positions[6] == positions[9]):
+            return 0
+    if (positions[3] == positions[6] and positions[6] == positions[9]):
         if not positions[3] == -1:
-            result = 0
-    elif (positions[1] == positions[5] and positions[5] == positions[9]):
+            return 0
+    if (positions[1] == positions[5] and positions[5] == positions[9]):
         if not positions[1] == -1:
-            result = 0
-    elif (positions[3] == positions[5] and positions[5] == positions[7]):
+            return 0
+    if (positions[3] == positions[5] and positions[5] == positions[7]):
         if not positions[3] == -1:
-            result = 0
-    else:
-        result = 1
-    return result
-
+            return 0
+    return 1
 
 
 if __name__ == '__main__':
