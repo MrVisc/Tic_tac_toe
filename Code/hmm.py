@@ -1,5 +1,10 @@
 from PIL import Image
+
+# One Third of side of bitmap image
+
 grid_size = 133
+
+# Copies one bitmap or grid_size over to the given grid
 
 def copy(width, height, img, imgnew):
     pix = imgnew.load()
@@ -8,6 +13,8 @@ def copy(width, height, img, imgnew):
             img.putpixel((i + width, j + height), pix[i, j])
     img.save('image1.bmp')
 
+# Resets the board
+ 
 def reset_board(img):
     width, height = img.size
     pix = img.load()
@@ -15,6 +22,8 @@ def reset_board(img):
         for j in range(width):
             img.putpixel((j, i), pix[j, i])
     img.save('image1.bmp')
+
+# Displays the gameboard repeatedly over each input
 
 def display(img, imgx, imgo, player, choice):
     if choice == 1:
@@ -51,6 +60,8 @@ def display(img, imgx, imgo, player, choice):
         imgnew = imgo
     copy(width, height, img, imgnew)
 
+# Checks for the end of game
+
 def check_for_winner(player, choice):
     if (positions[1] == positions[2] and positions[2] == positions[3]):
         if not positions[1] == -1:
@@ -86,6 +97,8 @@ if __name__ == '__main__':
     imgx = Image.open('image_x.bmp')
     imgo = Image.open('image_o.bmp')
 
+    #Setting the board to default gameboard
+    
     reset_board(img_board)
 
     player = 1
@@ -117,5 +130,5 @@ if __name__ == '__main__':
     if counter == 9:
         print("Draw Game, Better Luck Next Time!!")
     else:
-        print("Player {} Wins the Game, LESS GOOO!!".format(player))
+        print("Player {} Wins the Game, GG!!".format(player))
     
